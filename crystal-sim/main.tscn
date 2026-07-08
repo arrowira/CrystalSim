@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfxeuybr78wqa"]
+[gd_scene load_steps=3 format=3 uid="uid://cfxeuybr78wqa"]
 
+[ext_resource type="Script" uid="uid://dmv0ddpe42omv" path="res://manager.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bbpg5aai1n8q5" path="res://molecule.tscn" id="1_ig7tw"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0xm2m")
 
 [node name="molecule" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(140, 107)
