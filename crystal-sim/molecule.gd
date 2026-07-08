@@ -14,11 +14,13 @@ func _physics_process(delta: float) -> void:
 		
 		var rotAdd = 0
 		for molecule in nearbyMolecules:
-			var negToPos = distance(getPositive(),molecule.getPositive())
-			var posToNeg = distance(getNegative(),molecule.getNegative())
-			rotAdd += 1/((negToPos-posToNeg)+0.001)
-			
-		rotate(Engine.time_scale*rotAdd/1000.0)
+			var negToPos = distance(getNegative(),molecule.getPositive())
+			var posToNeg = distance(getPositive(),molecule.getNegative())
+			var amt = 1/(100*(negToPos-posToNeg)+0.0001)
+			amt *= 1/((negToPos+posToNeg)+0.0001)
+			rotAdd += amt
+		print(rotAdd)
+		rotate(rotAdd/100.0)
 	else:
 		underInfluence = false
 	
