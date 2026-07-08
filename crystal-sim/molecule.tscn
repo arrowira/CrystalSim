@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbpg5aai1n8q5"]
+
+[sub_resource type="Gradient" id="Gradient_ua2q1"]
+colors = PackedColorArray(0.12315676, 0.5308075, 0.28205833, 1, 1, 0.44394764, 0.4483317, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qs00y"]
+gradient = SubResource("Gradient_ua2q1")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4ewh"]
+radius = 170.423
+
+[node name="molecule" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1.4305115e-06)
+scale = Vector2(1, 0.46874994)
+texture = SubResource("GradientTexture2D_qs00y")
+
+[node name="positive" type="Node2D" parent="."]
+position = Vector2(-32, 0)
+
+[node name="negative" type="Node2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="molArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="molArea"]
+shape = SubResource("CircleShape2D_j4ewh")
